@@ -64,7 +64,7 @@ T = ""
 currI = maxI
 currJ = maxJ
 
-while (currI > 0 and currJ > 0):
+while (currI > 0 or currJ > 0):
 	isMatch = -1
 	if (sequenceA[currI-1] == sequenceB[currJ-1]):
 		isMatch = 1
