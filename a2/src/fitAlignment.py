@@ -24,11 +24,6 @@ with open(fastaFile, 'r') as file:
 				sequenceA += cleanedLine
 			elif (sequenceScanned == 2):
 				sequenceB += cleanedLine
-			
-
-m = 1
-mm = -1
-id = -1
 
 # create matrices
 lengthA = len(sequenceA)
@@ -64,6 +59,7 @@ T = ""
 currI = maxI
 currJ = maxJ
 
+# do backtracking
 while (currI > 0):
 	isMatch = -1
 	if (sequenceA[currI-1] == sequenceB[currJ-1]):
