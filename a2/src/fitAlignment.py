@@ -34,7 +34,10 @@ M = []
 for i in xrange(0,lengthA+1):
 	column = []
 	for j in xrange(0,lengthB+1):
-		column.append(0)
+		if (j == 0):
+			column.append(-1*i)
+		else:
+			column.append(0)
 	M.append(column)
  
 # find values for matrices
@@ -43,7 +46,7 @@ for i in xrange(1, lengthA+1):
 		isMatch = -1
 		if (sequenceA[i-1] == sequenceB[j-1]):
 			isMatch = 1
-		M[i][j] = max([M[i-1][j-1] + isMatch, M[i-1][j] -1, M[i][j-1] - 1])
+		M[i][j] = max([M[i-1][j-1] + isMatch, M[i-1][j] - 1, M[i][j-1] - 1])
 
 # get location of max score end
 maxI = lengthA
@@ -62,10 +65,7 @@ currJ = maxJ
 # do backtracking
 while (currI > 0):
 	isMatch = -1
-	if (sequenceA[currI-1] == sequenceB[currJ-1]):
-		isMatch = 1
-
-	if (M[currI][currJ] == M[currI - 1][currJ] -1):
+	if (M[currI][currJ] == M[currI - 1][currJ] - 1):
 		S = str(sequenceA[currI-1]) + S
 		T = "-" + T
 		currI -= 1
