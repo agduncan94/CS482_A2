@@ -8,6 +8,6 @@ TEST CASES
 4) Mix of english letters, digits, punctuation
 5) Random empty lines between sequences
 6) File almost 10K
-7) Not Done - matches left half only of second string?
-8) Not Done - matches right half only of second string?
-9) Not Done - ???
+7) Gaps in sequence 1 still have gap penalties
+8) Gaps in sequence 2 still have gap penalties
+9) Random sequences
